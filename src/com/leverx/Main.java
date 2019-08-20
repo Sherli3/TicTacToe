@@ -61,9 +61,13 @@ public class Main {
         }
         newBoard.showBoard((gameBoard));
         if (winner == 0)
-            System.out.println("\n---- YOU WON!! ----");
-        else if (winner == 1)
-            System.out.println("\n---- YOU LOST!! ----");
+            System.out.println("\n---- " + userSymbol +"YOU WON!! ----");
+        else if (winner == 1){
+            if (isOpponent) {
+            System.out.println("\n---- " + userSymbol +"YOU LOST!! WON" +compSymbol+" ----");
+            }
+            else
+                System.out.println("Won:" + compSymbol);}
         else
             System.out.println("\n---- DRAW!! ----");
 
