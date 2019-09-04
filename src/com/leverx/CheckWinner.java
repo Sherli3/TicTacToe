@@ -1,13 +1,9 @@
 package com.leverx;
 
 public class CheckWinner {
-    public static boolean isGameWon(char[][] board, int turn, char userSymbol, char compOrUser2Symbol) {
-        char symmetric;
-        if (turn == 0)
-            symmetric = userSymbol;
-        else
-            symmetric = compOrUser2Symbol;
+    public static boolean isGameWon(char[][] board, char userSymbol) {
 
+        char symmetric = userSymbol == 'X' ? 'O' : 'X';
         int i, j;
         boolean win = false;
 
