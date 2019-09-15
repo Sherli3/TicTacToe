@@ -42,29 +42,28 @@ public class ArtificialIntelligence {
                 }
             }
         }
-      //  throw new RuntimeException("happening");
+        //  throw new RuntimeException("happening");
     }
 
     private static boolean placeIfEmpty(char[][] board, int x, int y, char symbol) {
         boolean isEmpty = false;
         if (board[x][y] == ' ') {
             board[x][y] = symbol;
-            isEmpty = true;
-            return isEmpty;
+            return isEmpty = true;
         } else {
             return isEmpty;
         }
     }
 
     private static boolean placeCharIfOnlyOneRest(char[][] board, char symbolToCheck, char symbolToPlace) {
-        boolean isUnfinished= false;
+        boolean isUnfinished = false;
         //rows
         for (int i = 0; i < board.length; i++) {
             int ch = checkOnlyOneRest(board[i][0], board[i][1], board[i][2], symbolToCheck);
             if (ch > -1) {
                 board[i][ch] = symbolToPlace;
-                isUnfinished= true;
-                return isUnfinished;
+                isUnfinished = true;
+
             }
         }
         //columns
@@ -72,26 +71,24 @@ public class ArtificialIntelligence {
             int ch = checkOnlyOneRest(board[0][i], board[1][i], board[2][i], symbolToCheck);
             if (ch > -1) {
                 board[ch][i] = symbolToPlace;
-                isUnfinished= true;
-                return isUnfinished;
+                isUnfinished = true;
             }
         }
         //diagonals
         int ch = checkOnlyOneRest(board[0][0], board[1][1], board[2][2], symbolToCheck);
         if (ch > -1) {
             board[ch][ch] = symbolToPlace;
-            isUnfinished= true;
-            return isUnfinished;
+            isUnfinished = true;
         }
         ch = checkOnlyOneRest(board[0][2], board[1][1], board[2][0], symbolToCheck);
         if (ch > -1) {
             board[ch][2 - ch] = symbolToPlace;
-            isUnfinished= true;
-            return isUnfinished;
+            isUnfinished = true;
         }
         //no unfinished lines, return false
         return isUnfinished;
     }
+
     private static int checkOnlyOneRest(char c0, char c1, char c2, char symbol) {
         if (c0 == symbol & c1 == symbol & c2 == ' ') {
             return 2;

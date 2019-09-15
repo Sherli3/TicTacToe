@@ -4,8 +4,9 @@ import java.util.Scanner;
 
 public class MovesUser {
     public static Scanner scanner = new Scanner(System.in);
+
     public static void userPlay(char[][] board, char currentSymbol) {
-        System.out.print("\n"+currentSymbol+", enter the row and column, please: ");
+        System.out.print("\n" + currentSymbol + ", enter the row and column, please: ");
 
         int rowIndex = scanner.nextInt();
         int colIndex = scanner.nextInt();
